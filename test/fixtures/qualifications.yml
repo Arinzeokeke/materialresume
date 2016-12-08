@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  school: MyString
+  grad_yr: 1
+  degree: MyString
+  post: one
+
+two:
+  school: MyString
+  grad_yr: 1
+  degree: MyString
+  post: two

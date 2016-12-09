@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161208192813) do
+ActiveRecord::Schema.define(version: 20161208200902) do
 
   create_table "experiences", force: :cascade do |t|
     t.string   "place"
@@ -28,16 +28,10 @@ ActiveRecord::Schema.define(version: 20161208192813) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
-    t.integer  "recommendation_id"
-    t.integer  "qualification_id"
-    t.integer  "experience_id"
-    t.integer  "project_id"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-    t.index ["experience_id"], name: "index_posts_on_experience_id"
-    t.index ["project_id"], name: "index_posts_on_project_id"
-    t.index ["qualification_id"], name: "index_posts_on_qualification_id"
-    t.index ["recommendation_id"], name: "index_posts_on_recommendation_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "permalink"
+    t.index ["permalink"], name: "index_posts_on_permalink"
   end
 
   create_table "projects", force: :cascade do |t|

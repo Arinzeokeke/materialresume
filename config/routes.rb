@@ -1,45 +1,4 @@
 Rails.application.routes.draw do
-  get 'recommendations/index'
-
-  get 'recommendations/new'
-
-  get 'recommendations/edit'
-
-  get 'recommendations/delete'
-
-  get 'projects/index'
-
-  get 'projects/new'
-
-  get 'projects/edit'
-
-  get 'projects/delete'
-
-  get 'experiences/index'
-
-  get 'experiences/new'
-
-  get 'experiences/edit'
-
-  get 'experiences/delete'
-
-  get 'qualifications/index'
-
-  get 'qualifications/new'
-
-  get 'qualifications/edit'
-
-  get 'qualifications/delete'
-
-=begin
-  get 'posts/index'
-
-  get 'posts/edit'
-
-  get 'posts/show'
-
-  get 'posts/new'
-=end
 
   resources :posts do
   	resources :qualifications do 

@@ -8,6 +8,15 @@ class PostsController < ApplicationController
   	
   end
 
+  def update
+    if @post.update_attributes(qualification_params)
+      redirect_to "index"
+    else
+      render "edit"
+    end
+  end
+
+
   def show
   end
 
@@ -15,7 +24,7 @@ class PostsController < ApplicationController
   	@post = Post.new
   end
 
-  def delete
+  def destroy
   	@post.destroy
   	redirect_to "index"
   end
@@ -32,8 +41,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-  	params.require(:post).permit(:first_name, :last_name, :email)
-  	
+  	params.require(:post).permit(:first_name, :last_name, :email, :category)
   end
 
   def get_post

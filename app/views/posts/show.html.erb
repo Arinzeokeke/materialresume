@@ -1,2 +1,58 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<div class = "cv">
+	<p> Name: <%= @post.full_name %> </p>
+	<p> Category: <%= @post.category %> </p>
+	<p> Email: <%= @post.email %> </p>
+
+	<% if @post.qualifications.count > 0 %>
+	</br>
+	<hr>
+	
+	<h1> Qualifications </h1>
+
+	<% @post.qualifications.each do |qual| %>
+		<p> School: <%= qual.school %> </p>
+		<p> Degree: <%= qual.degree %> </p>
+		<p> Graduation Year: <%= qual.grad_yr%> </p>
+	<% end %>
+	<%end%>
+
+	<% if @post.experiences.count > 0 %>
+	</br>
+	<hr>
+	<h1> Work Experiences </h1>
+
+	<% @post.experiences.each do |exp| %>
+		<p> Place: <%= exp.place %> </p>
+		<p> Position: <%= exp.position %> </p>
+		<p> Year Started: <%= exp.work_start %>  </p>
+		<p> Year Ended: <%= exp.work_end %> </p>
+	<% end %>
+	<% end %>
+
+	<% if @post.projects.count > 0 %>
+	</br>
+	<hr>
+	<h1> Projects Done </h1>
+
+	<% @post.projects.each do |pro| %>
+		<p> Name: <%= pro.name %> </p>
+		<p> Project Year: <%= pro.project_yr %> </p>
+		<p> Project Description: <%= pro.description %>  </p>
+	<% end %>
+	<% end %>
+
+	<% if @post.recommendations.count > 0 %>
+	</br>
+	<hr>
+	<h1> Recommendations </h1>
+
+	<% @post.recommendations.each do |rec| %>
+		<p> Name: <%= rec.name %> </p>
+		<p> Position: <%= rec.position %> </p>
+		<p> Email: <%= rec.email %>  </p>
+	<% end %>
+	<% end %>
+
+
+
+</div>

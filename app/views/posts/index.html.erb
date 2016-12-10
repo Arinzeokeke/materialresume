@@ -1,2 +1,30 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<div class = "container">
+	<div class = "title-div">
+		<h1 class = "index-title">
+			List of Curriculum Vitae
+		</h1>
+	</div>
+    <%= link_to "Create New CV", new_post_path %>
+	<div class = "table-responsive">
+	<table class="table table-bordered table-striped" summary="CV list">
+    <tr class="header">
+      <th>&nbsp;</th>
+      <th>CV</th>
+      <th>Category</th>
+    </tr>
+    <% @posts.each do |post| %>
+    <tr>
+      <td><%= post.full_name %></td>
+      <td><%= post.category %></td>
+      <td class="actions">
+        <%= link_to "Show", post_path(post.id)  %>
+        <%= link_to "Edit", edit_post_path(post.id)  %>
+        <%= link_to  post_path(post), method: :delete, data: { confirm: "Are you sure?" }  do %><span class='glyphicon glyphicon-remove delete-comment'></span>
+						<%end%>
+        
+      </td>
+    </tr>
+    <% end %>
+  </table>
+  </div>
+</div>

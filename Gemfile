@@ -36,6 +36,7 @@ gem 'simple_form'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'devise'
 gem 'kaminari'
+gem 'country_select'
 gem 'acts_as_votable', '~> 0.10.0'
 
 #acts

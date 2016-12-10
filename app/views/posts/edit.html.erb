@@ -1,2 +1,16 @@
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<%= link_to "<< Back to List", posts_path %>
+
+<div class="post edit">
+  <h2>Update Post</h2>
+
+  <%= form_for(:post, post_path(@post.id)) do |f| %>
+  
+
+    <%= render(:partial => 'form', :locals => {:f => f}) %>
+
+    <div class="form-buttons">
+      <%= submit_tag("Next (Qualifications)") %>
+    </div>
+
+  <% end %>
+</div>

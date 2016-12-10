@@ -1,2 +1,16 @@
-<h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
+<%= link_to "<< Back to List", posts_path %>
+
+<div class="post new">
+  <h2>New Post</h2>
+
+  <%= form_for(:post, posts_path) do |f| %>
+  
+
+    <%= render(:partial => 'form', :locals => {:f => f}) %>
+
+    <div class="form-buttons">
+      <%= submit_tag("Next (Qualifications)") %>
+    </div>
+
+  <% end %>
+</div>

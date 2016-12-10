@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161208200902) do
+ActiveRecord::Schema.define(version: 20161210052451) do
 
   create_table "experiences", force: :cascade do |t|
     t.string   "place"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20161208200902) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "permalink"
+    t.string   "category"
     t.index ["permalink"], name: "index_posts_on_permalink"
   end
 

@@ -3,7 +3,7 @@
 <div class="post new">
   <h2>New Post</h2>
 
-  <%= form_for(:post, posts_path) do |f| %>
+  <%= simple_form_for @post, url: posts_path do |f| %>
   
 
     <%= render(:partial => 'form', :locals => {:f => f}) %>

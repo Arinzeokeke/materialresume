@@ -1,19 +1,16 @@
 <table summary="Post form fields">
       <tr>
-        <th><%= f.label(:first_name, "First Name")%></th>
-        <td><%= f.text_field(:first_name) %></td>
+        <%= f.input :first_name, label: "First Name", error: "First Name is mandatory"%>
+
       </tr>
       <tr>
-        <th><%= f.label(:last_name)%></th>
-        <td><%= f.text_field(:last_name, "Last Name") %></td>
+        <%= f.input :last_name, label: "Last Name", error: "Last Name is mandatory"%>
       </tr>
       <tr>
-        <th><%= f.label(:email)%></th>
-        <td><%= f.text_field(:email) %></td>
+           <%= f.input :email, placeholder: "user@domain.com"%>   
       </tr>
       <tr>
-        <th><%= f.label(:category)%></th>
-        <td><%= f.text_field(:category, "Your Category Of Work") %></td>
+        <%= f.input :category, label: "Category of Work"%>
       </tr>
 
 </table>

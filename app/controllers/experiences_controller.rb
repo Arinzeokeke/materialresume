@@ -16,7 +16,7 @@ class ExperiencesController < ApplicationController
   	@experience = Experience.new(experience_params)
     @experience.post_id = params[:post_id]
   	if @experience.save
-  		redirect_to new_post_project_path(@post.id)
+  		decide_redirect
   	else
   		render "new"
   	end
@@ -27,7 +27,7 @@ class ExperiencesController < ApplicationController
 
   def update
   	if @experience.update_attributes(experience_params)
-  		redirect_to edit_post_project_path(@post.id)
+      decide_redirect
   	else
   		render "edit"
   	end
@@ -52,5 +52,13 @@ class ExperiencesController < ApplicationController
 
   def experience_params
   	params.require(:experience).permit(:place, :position, :work_start, :work_end, :current_work, :post_id)
+  end
+
+  def decide_redirect
+    if @post.projects.count > 0
+      redirect_to edit_post_project_path(@post.id)
+    else
+      redirect_to new_post_project_path(@post.id)
+    end    
   end
 end

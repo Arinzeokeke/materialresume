@@ -15,7 +15,7 @@ class ProjectsController < ApplicationController\
   	@project = Project.new(project_params)
     @project.post_id = params[:post_id]
   	if @project.save
-  		redirect_to new_post_recommendation_path(@post.id)
+  		decide_redirect
   	else
   		render "new"
   	end
@@ -27,7 +27,7 @@ class ProjectsController < ApplicationController\
 
   def update
   	if @project.update_attributes(project_params)
-  		redirect_to edit_post_recommendation_path(@post.id)
+        decide_redirect
   	else
   		render "edit"
   	end
@@ -52,6 +52,14 @@ class ProjectsController < ApplicationController\
 
   def project_params
   	params.require(:project).permit(:name, :project_yr, :description, :post_id)
+  end
+
+  def decide_redirect
+    if @post.recommendations.count > 0
+      redirect_to edit_post_recommendation_path(@post.id)
+    else
+      redirect_to new_post_recommendation_path(@post.id)
+    end
   end
 
 

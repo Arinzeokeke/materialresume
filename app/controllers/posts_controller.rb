@@ -10,7 +10,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update_attributes(post_params)
-      redirect_to edit_post_qualification_path(@post.id)
+      decide_redirect
     else
       render "edit"
     end
@@ -34,7 +34,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
   	if @post.save
       flash[:notice] = "Post created successfully"
-      redirect_to new_post_qualification_path(@post.id)
+      decide_redirect
     else
       render('new')
     end
@@ -47,5 +47,13 @@ class PostsController < ApplicationController
 
   def get_post
   	@post = Post.find(params[:id])
+  end
+
+  def decide_redirect
+    if @post.qualifications.count > 0
+      redirect_to edit_post_qualification_path(@post.id)
+    else
+      redirect_to new_post_qualification_path(@post.id)
+    end
   end
 end

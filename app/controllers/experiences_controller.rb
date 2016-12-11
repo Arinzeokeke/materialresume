@@ -47,7 +47,7 @@ class ExperiencesController < ApplicationController
   end
 
   def get_experience
-  	@experience = Experience.find(params[:id])
+  	@experience = Experience.all.where(:post_id => @post.id).first
   end
 
   def experience_params

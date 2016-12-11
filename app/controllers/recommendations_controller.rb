@@ -46,8 +46,8 @@ class RecommendationsController < ApplicationController
   	@post = Post.find(params[:post_id])
   end
 
-  def get_experience
-  	@recommendation = Recommendation.find(params[:id])
+  def get_recommendation
+  	@recommendation = Recommendation.all.where(:post_id => @post.id).first
   end
 
   def recommendation_params

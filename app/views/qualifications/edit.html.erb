@@ -3,7 +3,7 @@
 <div class="post edit">
   <h2>Update Qualifications</h2>
 
-  <%= simple_form_for @qualification, url: post_qualification_path(@qualification.id) do |f| %>
+  <%= simple_form_for @qualification, url: post_qualification_path(@post.id,@qualification.id) do |f| %>
   
 
     <%= render(:partial => 'form', :locals => {:f => f}) %>

@@ -47,7 +47,7 @@ class ProjectsController < ApplicationController\
   end
 
   def get_project
-  	@project = Project.find(params[:id])
+  	@project = Project.all.where(:post_id => @post.id).first
   end
 
   def project_params

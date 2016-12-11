@@ -3,7 +3,7 @@
 <div class="project edit">
   <h2>Update Project</h2>
 
-  <%= simple_form_for @project, url: post_project_path(@project.id) do |f| %>
+  <%= simple_form_for @project, url: post_project_path(@post.id, @project.id) do |f| %>
   
 
     <%= render(:partial => 'form', :locals => {:f => f}) %>

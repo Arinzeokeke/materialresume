@@ -54,7 +54,7 @@ class QualificationsController < ApplicationController
   end
 
   def get_qualification
-  	@qualification = Qualification.find(params[:id])
+  	@qualification = Qualification.all.where(:post_id => @post.id).first
   end
 
   def qualification_params

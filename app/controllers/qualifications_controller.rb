@@ -14,7 +14,7 @@ class QualificationsController < ApplicationController
   def create
   	@qualification = Qualification.new(qualification_params)
   	if @qualification.save
-  		redirect_to "index"
+  		redirect_to new_post_experience_path(@post.id)
   	else
   		render "new"
   	end
@@ -29,12 +29,12 @@ class QualificationsController < ApplicationController
 
   def update
   	if @qualification.update_attributes(qualification_params)
-  		redirect_to "index"
+  		redirect_to edit_post_experience_path(@post.id)
   	else
   		render "edit"
   	end
   end
-  end
+
 
   def destroy
   	@qualification.destroy

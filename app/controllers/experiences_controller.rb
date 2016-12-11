@@ -14,7 +14,7 @@ class ExperiencesController < ApplicationController
   def create
   	@experience = Experience.new(experience_params)
   	if @experience.save
-  		redirect_to "index"
+  		redirect_to new_post_project_path(@post.id)
   	else
   		render "new"
   	end
@@ -25,7 +25,7 @@ class ExperiencesController < ApplicationController
 
   def update
   	if @experience.update_attributes(experience_params)
-  		redirect_to "index"
+  		redirect_to edit_post_project_path(@post.id)
   	else
   		render "edit"
   	end

@@ -12,7 +12,7 @@ class ProjectsController < ApplicationController\
   def create
   	@project = Project.new(project_params)
   	if @project.save
-  		redirect_to "index"
+  		redirect_to new_post_recommendation_path(@post.id)
   	else
   		render "new"
   	end
@@ -24,7 +24,7 @@ class ProjectsController < ApplicationController\
 
   def update
   	if @project.update_attributes(project_params)
-  		redirect_to "index"
+  		redirect_to edit_post_recommendation_path(@post.id)
   	else
   		render "edit"
   	end

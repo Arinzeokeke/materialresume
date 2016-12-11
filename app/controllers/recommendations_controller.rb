@@ -17,7 +17,7 @@ class RecommendationsController < ApplicationController
   def create
   	@recommendation = Recommendation.new(recommendation_params)
   	if @recommendation.save
-  		redirect_to "index"
+  		redirect_to post_path(@post.id)
   	else
   		render "new"
   	end
@@ -25,7 +25,7 @@ class RecommendationsController < ApplicationController
 
   def update
   	if @recommendation.update_attributes(recommendation_params)
-  		redirect_to "index"
+  		redirect_to post_path(@post.id)
   	else
   		render "edit"
   	end

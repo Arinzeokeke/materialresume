@@ -16,6 +16,7 @@ class RecommendationsController < ApplicationController
 
   def create
   	@recommendation = Recommendation.new(recommendation_params)
+    @recommendation.post_id = params[:post_id]
   	if @recommendation.save
   		redirect_to post_path(@post.id)
   	else

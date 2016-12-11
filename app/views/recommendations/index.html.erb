@@ -1,2 +1,7 @@
-<h1>Recommendations#index</h1>
-<p>Find me in app/views/recommendations/index.html.erb</p>
+	<h1> Recommendations </h1>
+
+	<% @recommendations.each do |rec| %>
+		<p> Name: <%= rec.name %> </p>
+		<p> Position: <%= rec.position %> </p>
+		<p> Email: <%= rec.email %>  </p>
+	<% end %>

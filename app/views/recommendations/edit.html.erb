@@ -1,2 +1,16 @@
-<h1>Recommendations#edit</h1>
-<p>Find me in app/views/recommendations/edit.html.erb</p>
+<%= link_to "<< Back to List", posts_path %>
+
+<div class="recommendation edit">
+  <h2>Update Recommendation</h2>
+
+  <%= simple_form_for @recommendation, url: post_recommendation_path(@recommendation.id) do |f| %>
+  
+
+    <%= render(:partial => 'form', :locals => {:f => f}) %>
+
+    <div class="form-buttons">
+      <%= submit_tag("Submit CV") %>
+    </div>
+
+  <% end %>
+</div>

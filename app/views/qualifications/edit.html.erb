@@ -1,2 +1,16 @@
-<h1>Qualifications#edit</h1>
-<p>Find me in app/views/qualifications/edit.html.erb</p>
+<%= link_to "<< Back to List", posts_path %>
+
+<div class="post edit">
+  <h2>Update Qualifications</h2>
+
+  <%= simple_form_for @qualification, url: post_qualification_path(@qualification.id) do |f| %>
+  
+
+    <%= render(:partial => 'form', :locals => {:f => f}) %>
+
+    <div class="form-buttons">
+      <%= submit_tag("Next (Experiences)") %>
+    </div>
+
+  <% end %>
+</div>

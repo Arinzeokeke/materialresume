@@ -12,7 +12,9 @@ class ExperiencesController < ApplicationController
   end
 
   def create
+    puts "YYYYYYY"
   	@experience = Experience.new(experience_params)
+    @experience.post_id = params[:post_id]
   	if @experience.save
   		redirect_to new_post_project_path(@post.id)
   	else

@@ -1,6 +1,8 @@
 class ProjectsController < ApplicationController\
-	before_action :get_post
-	before_action :get_project, only: [:edit, :update, :delete, :destroy, :show]
+	
+  before_action :get_post
+
+	before_action :get_project, only: [:edit, :update, :destroy, :show]
   def index
   	@projects = Project.all.where(:post_id => @post.id)
   end
@@ -11,6 +13,7 @@ class ProjectsController < ApplicationController\
 
   def create
   	@project = Project.new(project_params)
+    @project.post_id = params[:post_id]
   	if @project.save
   		redirect_to new_post_recommendation_path(@post.id)
   	else

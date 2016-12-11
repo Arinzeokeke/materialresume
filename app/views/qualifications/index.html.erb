@@ -1,2 +1,7 @@
-<h1>Qualifications#index</h1>
-<p>Find me in app/views/qualifications/index.html.erb</p>
+<h1> Qualifications </h1>
+
+	<% @qualifications.each do |qual| %>
+		<p> School: <%= qual.school %> </p>
+		<p> Degree: <%= qual.degree %> </p>
+		<p> Graduation Year: <%= qual.grad_yr%> </p>
+	<% end %>

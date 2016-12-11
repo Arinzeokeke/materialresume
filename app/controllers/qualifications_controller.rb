@@ -12,8 +12,15 @@ class QualificationsController < ApplicationController
   end
 
   def create
+
   	@qualification = Qualification.new(qualification_params)
+    qualification_params.each do |f|
+      puts f
+    end
+    puts params[:post_id]
+    @qualification.post_id = params[:post_id]
   	if @qualification.save
+      #puts "HEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"
   		redirect_to new_post_experience_path(@post.id)
   	else
   		render "new"

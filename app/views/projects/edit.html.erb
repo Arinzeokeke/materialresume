@@ -1,2 +1,16 @@
-<h1>Projects#edit</h1>
-<p>Find me in app/views/projects/edit.html.erb</p>
+<%= link_to "<< Back to List", posts_path %>
+
+<div class="project edit">
+  <h2>Update Project</h2>
+
+  <%= simple_form_for @project, url: post_project_path(@project.id) do |f| %>
+  
+
+    <%= render(:partial => 'form', :locals => {:f => f}) %>
+
+    <div class="form-buttons">
+      <%= submit_tag("Next (Recommendations)") %>
+    </div>
+
+  <% end %>
+</div>

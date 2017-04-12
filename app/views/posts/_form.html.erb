@@ -16,12 +16,13 @@
       </tr>
 
       <%= f.fields_for :qualifications do |builder| %>
-
+         <%= render 'qualifications_fields', builder: builder %>
 
       <% end %>
 
       <%= f.fields_for :projects do |builder| %>
  
+       <%= render 'projects_fields', builder: builder %>
 
 
 
@@ -29,6 +30,7 @@
 
       <%= f.fields_for :experiences do |builder| %>
 
+       <%= render 'experiences_fields', builder: builder %>
 
 
 
@@ -36,6 +38,7 @@
 
       <%= f.fields_for :recommendations do |builder| %>
 
+       <%= render 'recommendations_fields', builder: builder %>
 
       <% end %>
 

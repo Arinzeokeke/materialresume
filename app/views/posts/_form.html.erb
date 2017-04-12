@@ -1,3 +1,5 @@
+
+ <%= simple_form_for post do |f| %>
 <table summary="Post form fields">
       <tr>
         <%= f.input :first_name, label: "First Name", error: "First Name is mandatory"%>
@@ -13,4 +15,32 @@
         <%= f.input :category, label: "Category of Work"%>
       </tr>
 
+      <%= f.fields_for :qualifications do |builder| %>
+
+
+      <% end %>
+
+      <%= f.fields_for :projects do |builder| %>
+ 
+
+
+
+      <% end %>
+
+      <%= f.fields_for :experiences do |builder| %>
+
+
+
+
+      <% end %>
+
+      <%= f.fields_for :recommendations do |builder| %>
+
+
+      <% end %>
+
+      <%= f.submit "Create CV" %>
+
 </table>
+
+<% end %>

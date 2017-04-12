@@ -5,11 +5,12 @@
 		</h1>
 	</div>
     <%= link_to "Create New CV", new_post_path %>
+    <%= asset_url 'banner.jpg' %>
 	<div class = "table-responsive">
 	<table class="table table-bordered table-striped" summary="CV list">
     <tr class="header">
       <th>&nbsp;</th>
-      <th>CV</th>
+        <th>CV</th>
       <th>Category</th>
     </tr>
     <% @posts.each do |post| %>

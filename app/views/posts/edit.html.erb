@@ -3,14 +3,10 @@
 <div class="post edit">
   <h2>Update Post</h2>
 
-  <%= simple_form_for @post, url: post_path(@post.id) do |f| %>
-  
+ 
 
-    <%= render(:partial => 'form', :locals => {:f => f}) %>
+    <%= render(:partial => 'form', :locals => {post: @post}) %>
 
-    <div class="form-buttons">
-      <%= submit_tag("Next (Qualifications)") %>
-    </div>
 
-  <% end %>
+
 </div>

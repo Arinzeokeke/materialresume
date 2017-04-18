@@ -6,4 +6,15 @@ $(function(){
 		$(this).prev("input[type=hidden]").val('1');
 		$(this).closest('fieldset').hide()
 	})
+
+	$(".add_fields").on('click', function(e){
+		e.preventDefault()
+		console.log("clicked")
+		var time = new Date().getTime()
+		var regex = new RegExp($(this).data('id'), 'g')
+		//console.log($(this).before.html())
+		$(this).before($(this).data('field').replace(regex, time))
+
+		e.preventDefault()
+	})
 })

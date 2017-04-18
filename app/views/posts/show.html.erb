@@ -1,58 +1,97 @@
-<div class = "cv">
-	<p> Name: <%= @post.full_name %> </p>
-	<p> Category: <%= @post.category %> </p>
-	<p> Email: <%= @post.email %> </p>
-
-	<% if @post.qualifications.count > 0 %>
-	</br>
-	<hr>
+<div id="cv" class="instaFade">
+	<div class="mainDetails">
+		<div id="headshot" class="quickFade">
+			<%= image_tag "headshot.jpg", alt: @post.full_name %>
+		</div>
+		
+		<div id="name">
+			<h1 class="quickFade delayTwo"> <%= @post.full_name %></h1>
+			<h2 class="quickFade delayThree"><%= @post.category %></h2>
+		</div>
+		
+		<div id="contactDetails" class="quickFade delayFour">
+			<ul>
+				<li>e: <a href="mailto:joe@bloggs.com" target="_blank">joe@bloggs.com</a>
+				<%= link_to "#{@post.email}", "mailto:joe@bloggs.com", target: '_blank' %></li>
+				<li>w: <a href="http://www.bloggs.com">www.bloggs.com</a></li>
+				<li>m: 01234567890</li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+	</div>
 	
-	<h1> Qualifications </h1>
+	<div id="mainArea" class="quickFade delayFive">
+		<section>
+			<article>
+				<div class="sectionTitle">
+					<h1>Personal Profile</h1>
+				</div>
+				
+				<div class="sectionContent">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dolor metus, interdum at scelerisque in, porta at lacus. Maecenas dapibus luctus cursus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim. Vestibulum bibendum mattis dignissim. Proin id sapien quis libero interdum porttitor.</p>
+				</div>
+			</article>
+			<div class="clear"></div>
+		</section>
+		
+		
+		<section>
+			<div class="sectionTitle">
+				<h1>Work Experience</h1>
+			</div>
+			
+			<div class="sectionContent">
+			<%= render @post.experiences %>
+			</div>
+			<div class="clear"></div>
+		</section>
+		
+		
+		<section>
+			<div class="sectionTitle">
+				<h1>Key Skills</h1>
+			</div>
+			
+			<div class="sectionContent">
+				<ul class="keySkills">
+					<li>A Key Skill</li>
+					<li>A Key Skill</li>
+					<li>A Key Skill</li>
+					<li>A Key Skill</li>
+					<li>A Key Skill</li>
+					<li>A Key Skill</li>
+					<li>A Key Skill</li>
+					<li>A Key Skill</li>
+				</ul>
+			</div>
+			<div class="clear"></div>
+		</section>
+		
+		
+		<section>
+			<div class="sectionTitle">
+				<h1>Education</h1>
+			</div>
+			
+			<div class="sectionContent">
+			<%= render @post.qualifications %>
+			</div>
+			<div class="clear"></div>
+		</section>
 
-	<% @post.qualifications.each do |qual| %>
-		<p> School: <%= qual.school %> </p>
-		<p> Degree: <%= qual.degree %> </p>
-		<p> Graduation Year: <%= qual.grad_yr%> </p>
-	<% end %>
-	<%end%>
-
-	<% if @post.experiences.count > 0 %>
-	</br>
-	<hr>
-	<h1> Work Experiences </h1>
-
-	<% @post.experiences.each do |exp| %>
-		<p> Place: <%= exp.place %> </p>
-		<p> Position: <%= exp.position %> </p>
-		<p> Year Started: <%= exp.work_start %>  </p>
-		<p> Year Ended: <%= exp.work_end %> </p>
-	<% end %>
-	<% end %>
-
-	<% if @post.projects.count > 0 %>
-	</br>
-	<hr>
-	<h1> Projects Done </h1>
-
-	<% @post.projects.each do |pro| %>
-		<p> Name: <%= pro.name %> </p>
-		<p> Project Year: <%= pro.project_yr %> </p>
-		<p> Project Description: <%= pro.description %>  </p>
-	<% end %>
-	<% end %>
-
-	<% if @post.recommendations.count > 0 %>
-	</br>
-	<hr>
-	<h1> Recommendations </h1>
-
-	<% @post.recommendations.each do |rec| %>
-		<p> Name: <%= rec.name %> </p>
-		<p> Position: <%= rec.position %> </p>
-		<p> Email: <%= rec.email %>  </p>
-	<% end %>
-	<% end %>
+		<section>
+			<div class="sectionTitle">
+				<h1>Project</h1>
+			</div>
+			
+			<div class="sectionContent">
+			<%= render @post.projects %>
+			</div>
+			<div class="clear"></div>
+		</section>
 
 
-
+		
+	</div>
 </div>
+

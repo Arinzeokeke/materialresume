@@ -1,0 +1,7 @@
+       <fieldset>
+       <%= builder.input :name, label: "Project Name" %>
+        <%= builder.input :project_yr, label: "Project Year" %>
+        <%= builder.input :description, label: "Project Description" %>
+        <%= builder.hidden_field :_destroy  %>
+        <%= link_to "Remove",  "#", class:  "remove_fields" %>
+        </fieldset>

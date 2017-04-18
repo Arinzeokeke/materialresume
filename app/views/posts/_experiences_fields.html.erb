@@ -1,0 +1,12 @@
+        <fieldset>
+        <%= builder.input :place, label: "Place of Work" %>
+        <%= builder.input :position, label: "Your Position" %>
+        <%= builder.input :work_start, label: "Work Start" %>
+        <%= builder.input :work_end %>
+        <%= builder.input :current_work, label: "Current Job?" %>
+        <%= builder.label "Remove Experience?" %>
+        <%= builder.hidden_field :_destroy  %>
+        <%= link_to "Remove Experience?",  "#", class:  "remove_fields" %>
+
+        </fieldset>
+                

@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  layout 'cv', only: [:show]
 	before_action :get_post, only: [:edit, :show, :delete, :update, :destroy]
   def index
   	@posts = Post.all
@@ -42,14 +43,14 @@ class PostsController < ApplicationController
 
   private
   def post_params
-  	params.require(:post).permit(:first_name, :last_name, :email, :category)
+  	params.require(:post).permit(:first_name, :last_name, :email, :category, qualifications_attributes: [:post_id, :school, :grad_yr, :degree], projects_attributes: [:post_id, :name, :project_yr, :description], experiences_attributes: [:post_id, :place, :position , :work_start, :work_end, :current_work], recommendations_attributes: [:name, :position, :email, :post_id])
   end
 
   def get_post
   	@post = Post.find(params[:id])
   end
 
-  def decide_redirect
+  def decide_redire
     if @post.qualifications.count > 0
       redirect_to edit_post_qualification_path(@post.id)
     else

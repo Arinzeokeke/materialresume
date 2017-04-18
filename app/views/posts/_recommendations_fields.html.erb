@@ -1,0 +1,8 @@
+       <fieldset> <%= builder.input :name, label: "Person Name" %>
+        <%= builder.input :position, label: "Position" %>
+        <%= builder.input :email, label: "Email" %>
+<%= builder.hidden_field :_destroy  %>
+        <%= link_to "Remove",  "#", class:  "remove_fields" %>
+
+
+</fieldset>

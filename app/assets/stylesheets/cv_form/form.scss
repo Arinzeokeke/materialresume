@@ -1,8 +1,13 @@
 /*
 *= require font-awesome
- *= require_directory
- *= require_self
+*= require_self
+*= require_directory
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "font-awesome";
+//@import "font-awesome";
+/**/
+
+.image-container{
+background-image: image-url('cv/wizard-profile.jpg');
+}

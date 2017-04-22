@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  layout 'cv', only: [:show]
+  #layout 'cv', only: [:show]
   layout 'form', only: [:new, :edit]
 	before_action :get_post, only: [:edit, :show, :delete, :update, :destroy]
   def index
@@ -20,6 +20,7 @@ class PostsController < ApplicationController
 
 
   def show
+    render :show, layout: 'cv'
   end
 
   def new

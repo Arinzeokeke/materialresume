@@ -23,10 +23,10 @@ p {
 }
 
 #cv {
-	width: 90%;
-	max-width: 800px;
+	#width: 90%;
+	#max-width: 800px;
 	background: #f3f3f3;
-	margin: 30px auto;
+	padding-bottom: 30px ;
 }
 
 .mainDetails {

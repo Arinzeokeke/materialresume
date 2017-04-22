@@ -25,12 +25,21 @@
       <tr>
         <%= f.input :category, label: "Category of Work"%>
       </tr>
+            <tr>
+        <%= f.input :about, label: "Say Something About Yourself"%>
+      </tr>
 
       <%= f.fields_for :qualifications do |builder| %>
          <%= render 'qualifications_fields', builder: builder %>
 
       <% end %>
       <%= link_to_add_fields "Add Qualification", f, :qualifications %>
+
+      <%= f.fields_for :skills do |builder| %>
+         <%= render 'skills_fields', builder: builder %>
+
+      <% end %>
+      <%= link_to_add_fields "Add Skill", f, :skills %>
 
       <%= f.fields_for :projects do |builder| %>
  
@@ -59,6 +68,12 @@
 
       <% end %>
       <%= link_to_add_fields "Add Recommendation", f, :recommendations %>
+
+      <%= f.fields_for :others do |builder| %>
+         <%= render 'others_fields', builder: builder %>
+
+      <% end %>
+      <%= link_to_add_fields "Add Other", f, :others %>
 
       <%= f.submit "Create CV" %>
 

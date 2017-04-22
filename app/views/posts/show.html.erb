@@ -27,25 +27,27 @@
 				</div>
 				
 				<div class="sectionContent">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dolor metus, interdum at scelerisque in, porta at lacus. Maecenas dapibus luctus cursus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim. Vestibulum bibendum mattis dignissim. Proin id sapien quis libero interdum porttitor.</p>
+					<p><%= @post.about if @post.about %></p>
 				</div>
 			</article>
 			<div class="clear"></div>
 		</section>
 		
 		
+		<% if !@post.experiences.blank? %>
 		<section>
 			<div class="sectionTitle">
 				<h1>Work Experience</h1>
 			</div>
 			
 			<div class="sectionContent">
-			<%= render @post.experiences %>
+				<%= render @post.experiences %>
 			</div>
 			<div class="clear"></div>
 		</section>
+		<%  end %>
 		
-		
+		<% if !@post.skills.blank? %>
 		<section>
 			<div class="sectionTitle">
 				<h1>Key Skills</h1>
@@ -53,52 +55,54 @@
 			
 			<div class="sectionContent">
 				<ul class="keySkills">
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
+					<%= render @post.skills  %>
+					
 				</ul>
 			</div>
 			<div class="clear"></div>
 		</section>
+		<% end %>
 		
-		
+		<% if !@post.qualifications.blank? %>
 		<section>
 			<div class="sectionTitle">
 				<h1>Education</h1>
 			</div>
 			
 			<div class="sectionContent">
-			<%= render @post.qualifications %>
+				<%= render @post.qualifications %>
 			</div>
 			<div class="clear"></div>
 		</section>
-
-	<section>
-			<div class="sectionTitle">
-				<h1>Recommendation</h1>
-			</div>
-			
-			<div class="sectionContent">
-			<%= render @post.recommendations %>
-			</div>
-			<div class="clear"></div>
-		</section>
-
+		<% end %>
+		<% if !@post.recommendations.blank? %>
 		<section>
 			<div class="sectionTitle">
-				<h1>Project</h1>
+				<h1>Recommendations</h1>
 			</div>
 			
 			<div class="sectionContent">
-			<%= render @post.projects %>
+				<%= render @post.recommendations %>
 			</div>
 			<div class="clear"></div>
 		</section>
+		<% end %>
+		<% if !@post.projects.blank? %>
+		<section>
+			<div class="sectionTitle">
+				<h1>Projects</h1>
+			</div>
+			
+			<div class="sectionContent">
+				<%= render @post.projects %>
+			</div>
+			<div class="clear"></div>
+		</section>
+		<% end %>
+
+		<%=  render @post.others %>
+
+
 
 
 		

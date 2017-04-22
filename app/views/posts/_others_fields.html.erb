@@ -1,0 +1,6 @@
+       <fieldset>
+       <%= builder.input :title, label: "Title?" %>
+       <%= builder.input :detail, label: "Describe this 'thing' you speak of" %>
+        <%= builder.hidden_field :_destroy  %>
+        <%= link_to "Remove",  "#", class:  "remove_fields" %>
+        </fieldset>

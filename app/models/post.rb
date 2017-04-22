@@ -2,13 +2,13 @@ class Post < ApplicationRecord
 	has_many :projects, dependent: :destroy
 	has_many :qualifications, dependent: :destroy
 	has_many :recommendations, dependent: :destroy
-	has_many :experiences, dependent: :destroy 
-	validates :first_name, presence: true
-	validates :last_name, presence: true
-	validates :email, presence: true
-	validates :category, presence: true
+	has_many :experiences, dependent: :destroy
+	has_many :others, dependent: :destroy
+	has_many :skills, dependent: :destroy 
+	validates :first_name, :last_name, :category, :about, presence: true
 
-	accepts_nested_attributes_for :projects, :recommendations, :experiences, :qualifications, allow_destroy: true
+
+	accepts_nested_attributes_for :projects, :recommendations, :experiences, :qualifications, :skills, :others, allow_destroy: true
 
 	EMAIL_REGEX = /\A[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}\Z/i
 	validates :email, 

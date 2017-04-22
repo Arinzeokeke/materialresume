@@ -1,13 +1,46 @@
-        <fieldset>
-        <%= builder.input :place, label: "Place of Work" %>
-        <%= builder.input :position, label: "Your Position" %>
-        <%= builder.input :work_start, label: "Work Start" %>
-        <%= builder.input :work_end %>
-        <%= builder.input :current_work, label: "Current Job?" %>
-        <%= builder.input :detail, label: "Comment" %>
-        <%= builder.label "Remove Experience?" %>
-        <%= builder.hidden_field :_destroy  %>
-        <%= link_to "Remove Experience?",  "#", class:  "remove_fields" %>
+<fieldset>
+<div class="row">
 
-        </fieldset>
+        <div class="col-sm-7 col-sm-offset-1">
+                <div class="form-group label-floating">
+                        <label class="control-label">Place Of Work</label>
+                        <%= builder.input :place, label: false, class: 'form-control' %>
+                </div>
+        </div>
+        <div class="col-sm-3">
+                <div class="form-group label-floating">
+                        <label class="control-label">Position</label>
+                        <%= builder.input :position, label: false, class: 'form-control' %>
+                </div>
+        </div>
+        <div class="col-sm-3 col-sm-offset-1">
+                <div class="form-group label-floating">
+                        <label class="control-label">Work Start</label>
+                        <%= builder.input :work_start, label: false, class: 'form-control' %>
+                </div>
+        </div>
+        <div class="col-sm-3 col-sm-offset-1">
+                <div class="form-group label-floating">
+                        <label class="control-label">Work End</label>
+                        <%= builder.input :work_end, label: false, class: 'form-control' %>
+                </div>
+        </div>
+        <div class="col-sm-3 col-sm-offset-1">
+                <div class="form-group label-floating">
+                        <label class="control-label">Cirrent Work?</label>
+                        <%= builder.input :current_work, label: false, class: 'form-control' %>
+                </div>
+        </div>
+        <div class="col-sm-5">
+                <div class="form-group label-floating">
+                        <label class="control-label">Further Comment</label>
+                        <%= builder.input :detail, label: false, class: 'form-control' %>
+                </div>
+        </div>
+        <%= builder.hidden_field :_destroy  %>
+        <div class="pull-right">
+                <%= link_to "Remove",  "#", class:  "remove_fields btn  btn-fill btn-success btn-wd" %>
+        </div>
+</div>
+</fieldset>
                 

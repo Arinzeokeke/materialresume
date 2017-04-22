@@ -1,5 +1,16 @@
-       <fieldset>
-       <%= builder.input :talent, label: "Enter yor Skill. eg('Mobile Development')" %>
-        <%= builder.hidden_field :_destroy  %>
-        <%= link_to "Remove",  "#", class:  "remove_fields" %>
-        </fieldset>
+
+<div class="row">
+
+	<div class="col-sm-7 col-sm-offset-1">
+		<div class="form-group label-floating">
+			<label class="control-label">Skill</label>
+			<%= builder.input :talent, label: false, class: 'form-control' %>
+		</div>
+	</div>
+
+	<%= builder.hidden_field :_destroy  %>
+	<div class="pull-right">
+		<%= link_to "Remove",  "#", class:  "remove_fields btn  btn-fill btn-success btn-wd" %>
+	</div>
+</div>
+</fieldset>

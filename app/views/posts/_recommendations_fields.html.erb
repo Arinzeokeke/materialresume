@@ -1,8 +1,30 @@
-       <fieldset> <%= builder.input :name, label: "Person Name" %>
-        <%= builder.input :position, label: "Position" %>
-        <%= builder.input :email, label: "Email" %>
-<%= builder.hidden_field :_destroy  %>
-        <%= link_to "Remove",  "#", class:  "remove_fields" %>
 
 
+<fieldset>
+<div class="row">
+
+	<div class="col-sm-7 col-sm-offset-1">
+		<div class="form-group label-floating">
+			<label class="control-label">Name</label>
+			<%= builder.input :name, label: false, class: 'form-control' %>
+		</div>
+	</div>
+	<div class="col-sm-3">
+		<div class="form-group label-floating">
+			<label class="control-label">Position</label>
+			<%= builder.input :position, label: false, class: 'form-control' %>
+		</div>
+	</div>
+	<div class="col-sm-5 col-sm-offset-1">
+		<div class="form-group label-floating">
+			<label class="control-label">Email</label>
+			<%= builder.input :email, label: false, class: 'form-control' %>
+		</div>
+	</div>
+	<%= builder.hidden_field :_destroy  %>
+	<div class="pull-right">
+		<%= link_to "Remove",  "#", class:  "remove_fields btn  btn-fill btn-success btn-wd" %>
+	</div>
+</div>
 </fieldset>
+

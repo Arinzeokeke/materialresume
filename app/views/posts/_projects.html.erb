@@ -1,0 +1,15 @@
+		<div class="tab-pane" id="projects">
+
+			<div class="row">
+				<div class="col-sm-12">
+		 			<h4 class="info-text"> Projects You Participated In </h4>
+		 		</div>
+		 		<%= f.fields_for :projects do |builder| %>
+         			<%= render 'projects_fields', builder: builder %>
+
+      			<% end %>
+			</div>
+			<div class="text-center">
+				<%= link_to_add_fields "New Project", f, :projects %>
+			</div>
+		</div>

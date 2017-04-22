@@ -4,3 +4,26 @@
         <%= builder.hidden_field :_destroy  %>
         <%= link_to "Remove",  "#", class:  "remove_fields" %>
         </fieldset>
+
+
+        <fieldset>
+<div class="row">
+
+	<div class="col-sm-7 col-sm-offset-1">
+		<div class="form-group label-floating">
+			<label class="control-label">Title</label>
+			<%= builder.input :title, label: false, class: 'form-control' %>
+		</div>
+	</div>
+	<div class="col-sm-3">
+		<div class="form-group label-floating">
+			<label class="control-label">Description</label>
+			<%= builder.input :detail, label: false, class: 'form-control' %>
+		</div>
+	</div>
+	<%= builder.hidden_field :_destroy  %>
+	<div class="pull-right">
+		<%= link_to "Remove",  "#", class:  "remove_fields btn  btn-fill btn-success btn-wd" %>
+	</div>
+</div>
+</fieldset>

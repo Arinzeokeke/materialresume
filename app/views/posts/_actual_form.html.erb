@@ -20,8 +20,24 @@
 	</div>
 
 	<div class="tab-content">
+	<% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 		<%=  render 'personal_info', f: f %>
 		<%= render "qualifications", f: f %>
+		<%= render "skills", f: f %>
+	    <%= render 'projects', f: f %>
+	    <%=  render 'experiences', f: f %>
+	    <%= render 'recommendations', f: f %>
+	    <%= render 'others', f: f %>
 
 
 	</div>
@@ -29,7 +45,7 @@
 	<div class="wizard-footer">
 		<div class="pull-right">
 			<input type='button' class='btn btn-next btn-fill btn-success btn-wd' name='next' value='Next' />
-			<input type='button' class='btn btn-finish btn-fill btn-success btn-wd' name='finish' value='Finish' />
+			<%= f.submit "Finish",  class: 'btn btn-finish btn-fill btn-success btn-wd'%>
 		</div>
 
 		<div class="pull-left">

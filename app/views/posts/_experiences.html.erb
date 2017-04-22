@@ -1,0 +1,15 @@
+		<div class="tab-pane" id="experiences">
+
+			<div class="row">
+				<div class="col-sm-12">
+		 			<h4 class="info-text"> Work Experience </h4>
+		 		</div>
+		 		<%= f.fields_for :experiences do |builder| %>
+         			<%= render 'experiences_fields', builder: builder %>
+
+      			<% end %>
+			</div>
+			<div class="text-center">
+				<%= link_to_add_fields "New Experiences", f, :experiences %>
+			</div>
+		</div>

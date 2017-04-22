@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   layout 'cv', only: [:show]
+  layout 'form', only: [:new, :edit]
 	before_action :get_post, only: [:edit, :show, :delete, :update, :destroy]
   def index
   	@posts = Post.all

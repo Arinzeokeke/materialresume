@@ -43,18 +43,10 @@ class PostsController < ApplicationController
 
   private
   def post_params
-  	params.require(:post).permit(:first_name, :last_name, :email, :category, qualifications_attributes: [:post_id, :school, :grad_yr, :degree], projects_attributes: [:post_id, :name, :project_yr, :description], experiences_attributes: [:post_id, :place, :position , :work_start, :work_end, :current_work], recommendations_attributes: [:name, :position, :email, :post_id])
+  	params.require(:post).permit(:first_name, :last_name, :email, :category, qualifications_attributes: [:id, :post_id, :school, :grad_yr, :degree, :_destroy], projects_attributes: [:id, :post_id, :name, :project_yr, :description, :_destroy], experiences_attributes: [:id, :post_id, :place, :position , :work_start, :work_end, :current_work, :_destroy], recommendations_attributes: [:id, :name, :position, :email, :post_id, :_destroy])
   end
 
   def get_post
   	@post = Post.find(params[:id])
-  end
-
-  def decide_redire
-    if @post.qualifications.count > 0
-      redirect_to edit_post_qualification_path(@post.id)
-    else
-      redirect_to new_post_qualification_path(@post.id)
-    end
   end
 end

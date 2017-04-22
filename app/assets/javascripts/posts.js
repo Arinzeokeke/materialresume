@@ -2,9 +2,10 @@
 // All this logic will automatically be available in application.js.
 $(function(){
 	$(".remove_fields").on("click", function(e){
-		e.preventDefault()
+		console.log('jk');
+		e.preventDefault();
 		$(this).prev("input[type=hidden]").val('1');
-		$(this).closest('fieldset').hide()
+		$(this).closest('fieldset').hide();
 	})
 
 	$(".add_fields").on('click', function(e){

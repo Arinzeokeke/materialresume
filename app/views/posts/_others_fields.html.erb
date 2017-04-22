@@ -1,21 +1,16 @@
-       <fieldset>
-       <%= builder.input :title, label: "Title?" %>
-       <%= builder.input :detail, label: "Describe this 'thing' you speak of" %>
-        <%= builder.hidden_field :_destroy  %>
-        <%= link_to "Remove",  "#", class:  "remove_fields" %>
-        </fieldset>
+
 
 
         <fieldset>
 <div class="row">
 
-	<div class="col-sm-7 col-sm-offset-1">
+	<div class="col-sm-3 col-sm-offset-1">
 		<div class="form-group label-floating">
 			<label class="control-label">Title</label>
 			<%= builder.input :title, label: false, class: 'form-control' %>
 		</div>
 	</div>
-	<div class="col-sm-3">
+	<div class="col-sm-8">
 		<div class="form-group label-floating">
 			<label class="control-label">Description</label>
 			<%= builder.input :detail, label: false, class: 'form-control' %>
@@ -23,7 +18,7 @@
 	</div>
 	<%= builder.hidden_field :_destroy  %>
 	<div class="pull-right">
-		<%= link_to "Remove",  "#", class:  "remove_fields btn  btn-fill btn-success btn-wd" %>
+		<%= link_to "Remove",  "#", class:  "remove_fields btn   btn-warning btn-xs " %>
 	</div>
 </div>
 </fieldset>

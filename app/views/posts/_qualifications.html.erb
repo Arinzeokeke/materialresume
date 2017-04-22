@@ -4,11 +4,12 @@
 				<div class="col-sm-12">
 		 			<h4 class="info-text"> Education Details </h4>
 		 		</div>
-		 		<%= f.fields_for :qualifications do |builder| %>
+		 		
+			</div>
+			<%= f.fields_for :qualifications do |builder| %>
          			<%= render 'qualifications_fields', builder: builder %>
 
       			<% end %>
-			</div>
 			<div class="text-center">
 				<%= link_to_add_fields "New Education", f, :qualifications %>
 			</div>

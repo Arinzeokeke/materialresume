@@ -4,11 +4,12 @@
 				<div class="col-sm-12">
 		 			<h4 class="info-text"> Your Professional Skills </h4>
 		 		</div>
-		 		<%= f.fields_for :skills do |builder| %>
+
+			</div>
+			<%= f.fields_for :skills do |builder| %>
          			<%= render 'skills_fields', builder: builder %>
 
       			<% end %>
-			</div>
 			<div class="text-center">
 				<%= link_to_add_fields "New Skills", f, :skills %>
 			</div>

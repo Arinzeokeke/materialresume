@@ -2,13 +2,14 @@
 
 			<div class="row">
 				<div class="col-sm-12">
-		 			<h4 class="info-text"> Miscellaneous (Is There Any Other Thing You'd Like to Add?) </h4>
+		 			<h4 class="info-text"> Miscellaneous  </h4>
 		 		</div>
+
+			</div>
 		 		<%= f.fields_for :others do |builder| %>
          			<%= render 'others_fields', builder: builder %>
 
       			<% end %>
-			</div>
 			<div class="text-center">
 				<%= link_to_add_fields "New Other", f, :others %>
 			</div>

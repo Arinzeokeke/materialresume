@@ -4,11 +4,12 @@
 				<div class="col-sm-12">
 		 			<h4 class="info-text"> Recommendations </h4>
 		 		</div>
-		 		<%= f.fields_for :recommendations do |builder| %>
+		 		
+			</div>
+			<%= f.fields_for :recommendations do |builder| %>
          			<%= render 'recommendations_fields', builder: builder %>
 
       			<% end %>
-			</div>
 			<div class="text-center">
 				<%= link_to_add_fields "New Recommendation", f, :recommendations %>
 			</div>

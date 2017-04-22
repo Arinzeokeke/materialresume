@@ -43,7 +43,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-  	params.require(:post).permit(:first_name, :last_name, :email, :category, :about, 
+  	params.require(:post).permit(:first_name, :last_name, :email, :category, :about, :avatar,
       qualifications_attributes: [:id, :post_id, :school, :detail, :grad_yr, :degree, :_destroy], 
       projects_attributes: [:id, :post_id, :name, :project_yr, :description, :_destroy],
        experiences_attributes: [:id, :post_id, :place, :position , :detail, :work_start, :work_end, :current_work, :_destroy], 

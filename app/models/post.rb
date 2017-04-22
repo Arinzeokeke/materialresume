@@ -7,6 +7,9 @@ class Post < ApplicationRecord
 	has_many :skills, dependent: :destroy 
 	validates :first_name, :last_name, :category, :about, presence: true
 
+	has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  	validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
+
 
 	accepts_nested_attributes_for :projects, :recommendations, :experiences, :qualifications, :skills, :others, allow_destroy: true
 

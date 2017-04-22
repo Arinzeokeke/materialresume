@@ -1,0 +1,42 @@
+ <%= simple_form_for post , html: { multipart: true, id: "post-form"} do |f| %>
+	<!--        You can switch " data-color="purple" "  with one of the next bright colors: "green", "orange", "red", "blue"       -->
+
+	<div class="wizard-header">
+		<h3 class="wizard-title">
+			Create Your Resume
+		</h3>
+		<h5>Fill out your information and get your Resume in a few minutes</h5>
+	</div>
+	<div class="wizard-navigation">
+		<ul>
+			<li><a href="#about" data-toggle="tab">Personal Details</a></li>
+			<li><a href="#education" data-toggle="tab">Education</a></li>
+			<li><a href="#skills" data-toggle="tab">Skills</a></li>
+			<li><a href="#projects" data-toggle="tab">Projects</a></li>
+			<li><a href="#experiences" data-toggle="tab">Experiences</a></li>
+			<li><a href="#recommendations" data-toggle="tab">Recommendations</a></li>
+			<li><a href="#other" data-toggle="tab">Other</a></li>
+		</ul>
+	</div>
+
+	<div class="tab-content">
+		<%=  render 'personal_info', f: f %>
+		<%= render "qualifications", f: f %>
+
+
+	</div>
+
+	<div class="wizard-footer">
+		<div class="pull-right">
+			<input type='button' class='btn btn-next btn-fill btn-success btn-wd' name='next' value='Next' />
+			<input type='button' class='btn btn-finish btn-fill btn-success btn-wd' name='finish' value='Finish' />
+		</div>
+
+		<div class="pull-left">
+			<input type='button' class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='Previous' />
+		</div>
+		<div class="clearfix"></div>
+	</div>
+<% end %>
+
+

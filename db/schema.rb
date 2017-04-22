@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170422152004) do
+ActiveRecord::Schema.define(version: 20170422164226) do
 
   create_table "experiences", force: :cascade do |t|
     t.string   "place"
@@ -38,11 +38,15 @@ ActiveRecord::Schema.define(version: 20170422152004) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.string   "permalink"
     t.string   "category"
     t.text     "about"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
     t.index ["permalink"], name: "index_posts_on_permalink"
   end
 

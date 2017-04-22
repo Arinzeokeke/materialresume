@@ -38,6 +38,8 @@ gem 'devise'
 gem 'kaminari'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
+gem "font-awesome-rails"
+gem 'paperclip'
 #gem 'country_select'
 gem 'acts_as_votable', '~> 0.10.0'
 

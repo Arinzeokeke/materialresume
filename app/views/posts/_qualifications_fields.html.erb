@@ -1,8 +1,33 @@
-       <fieldset> <%= builder.input :school, label: "School Name" %>
-        <%= builder.input :grad_yr, label: "Graduation Year" %>
-        <%= builder.input :degree, label: "Degree" %>
-        <%= builder.input :detail, label: "Comment" %>
-<%= builder.hidden_field :_destroy  %>
-        <%= link_to "Remove",  "#", class:  "remove_fields" %>
+<fieldset>
+<div class="row">
 
-        </fieldset>
+	<div class="col-sm-7 col-sm-offset-1">
+		<div class="form-group label-floating">
+			<label class="control-label">School Name</label>
+			<%= builder.input :school, label: false, class: 'form-control' %>
+		</div>
+	</div>
+	<div class="col-sm-3">
+		<div class="form-group label-floating">
+			<label class="control-label">Graduation Year</label>
+			<%= builder.input :grad_yr, label: false, class: 'form-control' %>
+		</div>
+	</div>
+	<div class="col-sm-5 col-sm-offset-1">
+		<div class="form-group label-floating">
+			<label class="control-label">Degree</label>
+			<%= builder.input :degree, label: false, class: 'form-control' %>
+		</div>
+	</div>
+	<div class="col-sm-5">
+		<div class="form-group label-floating">
+			<label class="control-label">Further Comment</label>
+			<%= builder.input :detail, label: false, class: 'form-control' %>
+		</div>
+	</div>
+	<%= builder.hidden_field :_destroy  %>
+	<div class="pull-right">
+		<%= link_to "Remove",  "#", class:  "remove_fields btn  btn-fill btn-success btn-wd" %>
+	</div>
+</div>
+</fieldset>

@@ -6,7 +6,7 @@ module PostsHelper
 		fields = f.fields_for(assoc, new_obj, child_index: id ) do |builder| 
 			render assoc.to_s + "_fields", builder: builder
 		end
-		link_to(text, '#', class: "add_fields", data: {id: id, field: fields.gsub('\n', '')})
+		link_to(text, '#', class: "add_fields btn  btn-fill btn-success btn-wd", data: {id: id, field: fields.gsub('\n', '')})
 
 		
 	end

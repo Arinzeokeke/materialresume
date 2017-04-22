@@ -1,0 +1,72 @@
+		<div class="tab-pane" id="about">
+			<div class="row">
+				<h4 class="info-text"> Let's start with your basic information</h4>
+				<div class="col-sm-4 col-sm-offset-1">
+					<div class="picture-container">
+						<div class="picture">
+							<img src="assets/img/default-avatar.png" class="picture-src" id="wizardPicturePreview" title=""/>
+							<%= image_tag 'cv/default-avatar.png', class: 'picture-src', id: 'wizardPicturePreview'%>
+							<%= f.input :avatar, id: 'wizard-picture' %>
+						</div>
+						<h6>Choose Picture</h6>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="input-group">
+						<span class="input-group-addon">
+							<i class="material-icons">face</i>
+						</span>
+						<div class="form-group label-floating">
+							<label class="control-label">First Name <small>(required)</small></label>
+							<%= f.input :first_name, label: false , class: "form-control", error: "First Name is mandatory"%>
+
+						</div>
+					</div>
+
+					<div class="input-group">
+						<span class="input-group-addon">
+							<i class="material-icons">record_voice_over</i>
+						</span>
+						<div class="form-group label-floating">
+							<label class="control-label">Last Name <small>(required)</small></label>
+							<%= f.input :last_name, label: false , class: "form-control", error: "Last Name is mandatory"%>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-10 col-sm-offset-1">
+					<div class="input-group">
+						<span class="input-group-addon">
+							<i class="material-icons">email</i>
+						</span>
+						<div class="form-group label-floating">
+							<label class="control-label">Email <small>(required)</small></label>
+							<%= f.input :email, label: false , class: "form-control", error: "Email is mandatory"%>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-10 col-sm-offset-1">
+					<div class="input-group">
+						<span class="input-group-addon">
+							<i class="material-icons">assignment</i>
+						</span>
+						<div class="form-group label-floating">
+							<label class="control-label">Category <small>(required)</small></label>
+							<%= f.input :category, label: false , class: "form-control", error: "Category is mandatory"%>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-10 col-sm-offset-1">
+					<div class="input-group">
+						<span class="input-group-addon">
+							<i class="material-icons">bookmark</i>
+						</span>
+						<div class="form-group label-floating">
+							<label class="control-label">Say something about yourself <small>(required)</small></label>
+							<%= f.input :about, label: false , class: "form-control", error: "Profile is mandatory"%>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161210052451) do
+ActiveRecord::Schema.define(version: 20170422074938) do
 
   create_table "experiences", force: :cascade do |t|
     t.string   "place"
@@ -24,6 +24,15 @@ ActiveRecord::Schema.define(version: 20161210052451) do
     t.index ["post_id"], name: "index_experiences_on_post_id"
   end
 
+  create_table "others", force: :cascade do |t|
+    t.string   "title"
+    t.text     "detail"
+    t.integer  "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_others_on_post_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -32,6 +41,7 @@ ActiveRecord::Schema.define(version: 20161210052451) do
     t.datetime "updated_at", null: false
     t.string   "permalink"
     t.string   "category"
+    t.text     "about"
     t.index ["permalink"], name: "index_posts_on_permalink"
   end
 
@@ -63,6 +73,14 @@ ActiveRecord::Schema.define(version: 20161210052451) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_recommendations_on_post_id"
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.string   "talent"
+    t.integer  "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_skills_on_post_id"
   end
 
   create_table "users", force: :cascade do |t|

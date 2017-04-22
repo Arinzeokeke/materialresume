@@ -18,7 +18,7 @@
       <td><%= post.category %></td>
       <td class="actions">
         <%= link_to "Show", post_path(post.id)  %>
-        <%= link_to "Edit", edit_post_path(post.id)  %>
+        <%= link_to "Edit", edit_post_path(post.id ), target: '_blank'  %>
         <%= link_to  post_path(post), method: :delete, data: { confirm: "Are you sure?" }  do %><span class='glyphicon glyphicon-remove delete-comment'></span>
 						<%end%>
         

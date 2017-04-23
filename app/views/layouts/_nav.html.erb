@@ -1,4 +1,4 @@
-    <nav class="navbar navbar-transparent  navbar-fixed-top navbar-color-on-scroll">
+    <nav class="navbar   navbar-fixed-top navbar-color-on-scroll">
     	<div class="container">
         	<!-- Brand and toggle get grouped for better mobile display -->
         	<div class="navbar-header">
@@ -14,10 +14,20 @@
         	<div class="collapse navbar-collapse" id="navigation-example">
         		<ul class="nav navbar-nav navbar-right">
     				<li>
-    					<a href="../components-documentation.html" target="_blank">
-    						Components
-    					</a>
+                        <%= link_to  new_user_registration_path do %>
+                        <i class="material-icons">perm_identity</i> Register
+                        <% end %>
     				</li>
+                    <li>
+                        <%= link_to  new_user_session_path do %>
+                        <i class="material-icons">rowing</i> Log In
+                        <% end %>
+                    </li>
+                    <li>
+                        <%= link_to  destroy_user_session_path do %>
+                        <i class="material-icons">perm_identity</i> Register
+                        <% end %>
+                    </li>
     				<li>
 						<a href="http://demos.creative-tim.com/material-kit-pro/presentation.html?ref=utp-freebie" target="_blank">
 							<i class="material-icons">unarchive</i> Upgrade to PRO

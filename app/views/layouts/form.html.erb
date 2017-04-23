@@ -17,11 +17,14 @@
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
 
 	<!-- CSS Files -->
+	<%= stylesheet_link_tag    params[:controller], media: 'all', 'data-turbolinks-track': 'reload' %>
+
 	<%= stylesheet_link_tag    'cv_form/form', media: 'all', 'data-turbolinks-track': 'reload' %>
 
 	</head>
 
 	<body>
+	<%= render 'layouts/nav' %>
 
 		<div class="image-container set-full-height" >
 	    <!--   Creative Tim Branding   -->
@@ -45,6 +48,8 @@
 	</div>
 	</body>
 	<%= javascript_include_tag 'cv_form/form', 'data-turbolinks-track': 'reload' %>
+	<% javascript_include_tag params[:controller], 'data-turbolinks-track': 'reload' %>
+
 
 
 	</html>

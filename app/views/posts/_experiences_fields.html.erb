@@ -39,8 +39,9 @@
         </div>
         <%= builder.hidden_field :_destroy  %>
         
-        <%= link_to "Remove",  "#", class:  "remove_fields btn  btn-danger btn-xs" %>
-        
+                <%= link_to   "#", class:  "remove_fields btn btn-simple btn-danger" do %>
+                Remove<div class="ripple-container"></div>
+        <% end %>        
 </div>
 </fieldset>
                 

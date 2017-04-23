@@ -15,13 +15,12 @@ $(function(){
 	})
 
 	$(".add_fields").on('click', function(e){
-		e.preventDefault()
-		console.log("clicked")
-		var time = new Date().getTime()
-		var regex = new RegExp($(this).data('id'), 'g')
+		e.preventDefault();
+		console.log("clicked");
+		var time = new Date().getTime();
+		var regex = new RegExp($(this).data('id'), 'g');
 		//console.log($(this).before.html())
-		$(this).before($(this).data('field').replace(regex, time))
+		$(this).before($(this).data('field').replace(regex, time));
 
-		e.preventDefault()
 	})
 })

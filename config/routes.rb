@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'auth/login'
+
+  get 'auth/logout'
+
   root to: "posts#index"
 
   resources :posts do

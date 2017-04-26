@@ -12,7 +12,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update_attributes(post_params)
-      redirect_to root_path
+      redirect_to post_path @post
     else
       render "edit"
     end
@@ -37,7 +37,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
   	if @post.save
       flash[:notice] = "Post created successfully"
-      redirect_to root_path
+      redirect_to post_path @post
     else
       render('new')
     end

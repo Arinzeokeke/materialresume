@@ -3714,11 +3714,11 @@ h2.title {
 }
 
 @media (max-width: 991px) {
-  .landing-page .header {
+  ..landing-header {
     height: auto;
     min-height: 100vh;
   }
-  .landing-page .header .container {
+  ..landing-header .container {
     padding-bottom: 70px;
   }
 }

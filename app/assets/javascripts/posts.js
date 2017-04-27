@@ -18,7 +18,15 @@ $.ajaxSetup({
 
 $("#signup-btn").on('click', function(){
 	console.log('modal yo');
+	$("#signin-modal").modal('hide');
 	$("#signup-modal").modal();
+});
+
+$("#signin-btn").on('click', function(){
+	console.log('modal yo 2');
+	$("#signup-modal").modal('hide');
+	$("#signin-modal").modal();
+
 });
 
 // $("form#sign_up_user").bind("ajax:success", (e, data, status, xhr) => {

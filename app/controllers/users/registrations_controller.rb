@@ -2,8 +2,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
   
-  clear_respond_to 
+  #clear_respond_to 
   respond_to :json
+  skip_before_filter :verify_authenticity_token
 
   # GET /resource/sign_up
   # def new

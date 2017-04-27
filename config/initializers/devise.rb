@@ -273,6 +273,6 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 
 
-  # config.http_authenticatable_on_xhr = false
-  # config.navigational_formats = ["*/*", :html, :json]
+  #config.http_authenticatable_on_xhr = false
+  #config.navigational_formats = ["*/*", :html, :json]
 end

@@ -21,6 +21,8 @@
   </head>
 
   <body class="landing-page">
+    <%= render 'layouts/popupforms' %>
+  <%= console %>
     <%= render 'layouts/nav' %>
     <div class="wrapper">
     <%=render 'layouts/header' %>
@@ -45,8 +47,9 @@
 
 
     </div>
-
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'posts', 'data-turbolinks-track': 'reload' %>
+
   
   </body>
 </html>

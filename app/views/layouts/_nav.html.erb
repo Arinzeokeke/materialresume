@@ -22,12 +22,12 @@
                     
                 <% else %>
                     <li>
-                        <%= link_to  new_user_registration_path do %>
+                        <%= link_to  "javascript:void(0)", id: "signup-btn" do %>
                         <i class="material-icons">perm_identity</i> Register
                         <% end %>
                     </li>
                     <li>
-                        <%= link_to  new_user_session_path do %>
+                        <%= link_to "javascript:void(0)", id: "signin-btn" do %>
                         <i class="material-icons">rowing</i> Log In
                         <% end %>
                     </li>

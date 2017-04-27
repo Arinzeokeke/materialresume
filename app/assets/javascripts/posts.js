@@ -10,6 +10,8 @@
 //= require material-kit.js
 //= require_self
 
+$(function  () {
+	
 $.ajaxSetup({
   headers: {
     'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
@@ -45,16 +47,6 @@ $("#signup2").click( function(){
 	$("#signup-modal").modal();
 });
 
-// $("form#sign_up_user").bind("ajax:success", (e, data, status, xhr) => {
-//     if (data.success){
-//       $('#sign_up').modal('hide');
-//       $('#sign_up_button').hide();
-//       $('#submit_comment').slideToggle(1000, "easeOutBack" );
-//   }
-//     else{
-//       alert('failure!');
-//     }
-// });
 
 
 $('.ajax-signin-btn').on('click', () => {
@@ -113,4 +105,6 @@ $('.ajax-signin-btn').on('click', () => {
 			console.log(data);
 		}
 	});
+});
+	
 });

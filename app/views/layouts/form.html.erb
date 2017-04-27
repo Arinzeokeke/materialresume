@@ -20,10 +20,12 @@
 	<%= stylesheet_link_tag    params[:controller], media: 'all', 'data-turbolinks-track': 'reload' %>
 
 	<%= stylesheet_link_tag    'cv_form/form', media: 'all', 'data-turbolinks-track': 'reload' %>
+	
 
 	</head>
 
 	<body>
+	  <%= render 'layouts/popupforms' %>
 	<%= render 'layouts/nav' %>
 
 

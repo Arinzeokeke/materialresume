@@ -13,26 +13,28 @@
 
         	<div class="collapse navbar-collapse" id="navigation-example">
         		<ul class="nav navbar-nav navbar-right">
-    				<li>
+                <% if user_signed_in? %>
+                    <li>
+                        <%= link_to  destroy_user_session_path,  method: :delete do %>
+                        <i class="material-icons">unarchive</i> Log Out
+                        <% end %>
+                    </li>
+                    
+                <% else %>
+                    <li>
                         <%= link_to  new_user_registration_path do %>
                         <i class="material-icons">perm_identity</i> Register
                         <% end %>
-    				</li>
+                    </li>
                     <li>
                         <%= link_to  new_user_session_path do %>
                         <i class="material-icons">rowing</i> Log In
                         <% end %>
                     </li>
-                    <li>
-                        <%= link_to  destroy_user_session_path do %>
-                        <i class="material-icons">perm_identity</i> Register
-                        <% end %>
-                    </li>
-    				<li>
-						<a href="http://demos.creative-tim.com/material-kit-pro/presentation.html?ref=utp-freebie" target="_blank">
-							<i class="material-icons">unarchive</i> Upgrade to PRO
-						</a>
-    				</li>
+                    
+                <% end %>
+
+
 		            <li>
 		                <a href="https://twitter.com/CreativeTim" target="_blank" class="btn btn-simple btn-white btn-just-icon">
 							<i class="fa fa-twitter"></i>

@@ -39,7 +39,7 @@ class PostsController < ApplicationController
       flash[:notice] = "Post created successfully"
       redirect_to post_path @post
     else
-      render('new')
+      render new_post_path
     end
   end
 

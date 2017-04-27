@@ -1,42 +1,3 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title> Material Resume </title>
-    <%= csrf_meta_tags %>
-      <meta charset="utf-8" />
-  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-
-  <title>Material Resume - Create your own resume</title>
-
-  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-
-  <!--     Fonts and icons     -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
-
-    <%= stylesheet_link_tag    'posts', media: 'all', 'data-turbolinks-track': 'reload' %>
-    
-  </head>
-
-  <body class="landing-page">
-    <%= render 'layouts/nav' %>
-    <div class="wrapper">
-    <%=render 'layouts/header' %>
-      <p class="notice"><%= notice %></p>
-   <p class="alert"><%= alert %></p>
-
-    <%= yield %>
-
-      
-
-
-
-    <%= render 'layouts/footer' %>
-
-    
-
 
 <div class="wrapper popup">
       <div class="container">
@@ -83,7 +44,7 @@
                     <span class="input-group-addon">
                       <i class="material-icons">lock_outline</i>
                     </span>
-                    <%= f.input :password_confirmation, required: true, placeholder: 'Confirm Password', label: false %>
+                    <%= f.input :password_confirmation, required: true, placeholder: 'Confirm Password' %>
                   </div>
 
                   <!-- If you want to add a checkbox to this form, uncomment this code
@@ -108,16 +69,3 @@
       </div>
 
       
-
-
-
-
-
-
-
-    </div>
-
-  <%= javascript_include_tag 'posts', 'data-turbolinks-track': 'reload' %>
-  
-  </body>
-</html>

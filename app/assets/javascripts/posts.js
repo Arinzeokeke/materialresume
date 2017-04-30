@@ -10,12 +10,34 @@
 //= require material-kit.js
 //= require_self
 
-$(function  () {
+
+$(document).on("turbolinks:load", () => {
 	
-$.ajaxSetup({
-  headers: {
-    'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
-  }
+
+
+  $("#sign_in_user").on("ajax:success", (e, data, status, xhr) => {
+    //$("#new_article").append(xhr.responseText);
+
+    console.log(data);
+    console.log(status);
+    console.log(xhr);
+    console.log(xhr.responseText);
+}
+  ).on ("ajax:error", (e, xhr, status, error) => {
+    //$("#new_article").append("<p>ERROR</p>");
+    console.log(data);
+    console.log(status);
+    console.log(xhr);
+    console.log(xhr.responseText);
+});
+
+   $("#sign_up_user").on("ajax:success", (e, data, status, xhr) => {
+    //$("#new_article").append(xhr.responseText);
+    console.log(xhr.responseText);
+}
+  ).on ("ajax:error", (e, xhr, status, error) => {
+    //$("#new_article").append("<p>ERROR</p>");
+    console.log(xhr.responseText);
 });
 
 $("#signup-btn").click( function(){

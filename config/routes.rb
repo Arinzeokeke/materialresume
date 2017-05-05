@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   root to: "posts#index"
 
+  resources :profiles
+
   resources :posts do
   	resources :qualifications do 
   	end

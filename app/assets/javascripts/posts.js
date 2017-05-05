@@ -69,6 +69,7 @@ $(document).on("turbolinks:load", () => {
 $("#signup-btn").click( function(){
 	console.log('modal yo');
 	$("#signin-modal").modal('hide');
+	$("#signup-modal").modal();
 	$("#signup-error").html('');
 	$("#signin-error").html('');
 });

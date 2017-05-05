@@ -12,6 +12,18 @@
 
 
 $(document).on("turbolinks:load", () => {
+
+
+	var show_ajax_message = (msg) => {
+  		$("#signin-error").html("<div id='flash-#{type}'>" + msg + "</div>");
+  		//$("#flash-#{type}").delay(5000).slideUp('slow');
+  	}
+
+	$(document).ajaxComplete((event, request) => {
+  		msg = request.getResponseHeader("X-Message");
+  		type = request.getResponseHeader("X-Message-Type");
+  		//show_ajax_message(msg, type); //use whatever popup, notification or whatever plugin you want
+  	});
 	
 
 
@@ -21,6 +33,7 @@ $(document).on("turbolinks:load", () => {
     //console.log(data);
     console.log(status);
     console.log(xhr);
+    show_ajax_message(xhr.responseText);
     console.log(xhr.responseText);
 }
   ).on ("ajax:error", (e, xhr, status, error) => {
@@ -28,6 +41,11 @@ $(document).on("turbolinks:load", () => {
     //console.log(data);
     console.log(status);
     console.log(xhr);
+    var errors = xhr.responseText;
+    var mes = "";
+    mes += '<p>' + errors + '</p>';
+    mes +=  '';
+    $("#signin-error").html(mes);
     console.log(xhr.responseText);
 });
 
@@ -38,12 +56,21 @@ $(document).on("turbolinks:load", () => {
   ).on ("ajax:error", (e, xhr, status, error) => {
     //$("#new_article").append("<p>ERROR</p>");
     console.log(xhr.responseText);
+    var errors = JSON.parse(xhr.responseText)['errors'];
+    console.log(errors);
+    var mes = "<div class = 'row'>";
+    for (i in errors){
+    	mes += '<p>' + i + ': ' + errors[i] + '</p>';
+    }
+    mes +=  '</div>';
+    $("#signup-error").html(mes);
 });
 
 $("#signup-btn").click( function(){
 	console.log('modal yo');
 	$("#signin-modal").modal('hide');
-	$("#signup-modal").modal();
+	$("#signup-error").html('');
+	$("#signin-error").html('');
 });
 
 
@@ -51,6 +78,8 @@ $("#signin-btn").on('click', function(){
 	console.log('modal yo 2');
 	$("#signup-modal").modal('hide');
 	$("#signin-modal").modal();
+	$("#signup-error").html('');
+	$("#signin-error").html('');
 
 });
 

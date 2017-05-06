@@ -28,8 +28,8 @@ class UsersController < ApplicationController
 
       if @user.save
         auto_login(@user)
-        
-        redirect_to @user, notice: 'User was successfully created.'
+
+        redirect_to request.referrer, notice: 'User was successfully created.'
         #render :show, status: :created, location: @user }
       else
         render json: @user.errors.full_messages, status: :unprocessable_entity 

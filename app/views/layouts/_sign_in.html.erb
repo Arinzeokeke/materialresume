@@ -1,0 +1,68 @@
+
+
+
+
+<div class="wrapper popup">
+      <div class="container-fluid popup-dialog">
+
+            <div class="card card-signup">
+              <%= form_tag user_sessions_path, method: :post , :html => {:id => "sign_in_user"}, :format => :json, :remote => true  do  %>
+                <div class="header header-primary text-center">
+                  <h4>Log In</h4>
+                  
+                  
+                  <div class="social-line">
+                    <a href="#pablo" class="btn btn-simple btn-just-icon">
+                      <i class="fa fa-facebook-square"></i>
+                    </a>
+                    <a href="#pablo" class="btn btn-simple btn-just-icon">
+                      <i class="fa fa-twitter"></i>
+                    </a>
+                    <a href="#pablo" class="btn btn-simple btn-just-icon">
+                      <i class="fa fa-google-plus"></i>
+                    </a>
+                  </div>
+                </div>
+                <p class="text-divider">Or Be Classical</p>
+
+              <div id='signin-error' class = 'text-center' style = 'color: red;'> </div>
+                <div class="content">
+
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                      <i class="material-icons">email</i>
+                    </span>
+                    <%= text_field_tag :email, placeholder: 'email', required: true, autofocus: true %>
+                    
+                  </div>
+
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                      <i class="material-icons">lock_outline</i>
+                    </span>
+                    <%= password_field_tag :password, required: true, placeholder: 'Password' %>
+                  </div>
+
+                  <!-- If you want to add a checkbox to this form, uncomment this code 
+
+                  <div class="checkbox">
+                  
+                  </div>  -->
+                </div>
+                <div class="footer text-center">
+                  <%= submit_tag  "Log In",  class: "btn btn-simple btn-primary btn-lg" %>
+                </div>
+              <%end%>
+                            <div class="text-center">
+                <h5> Don't have an account? </h5>
+              <button type="button" class="btn btn-info btn-simple btn-lg" id="signup2">Sign Up</button>
+
+              </div>
+            </div>
+
+          </div>
+
+
+      </div>
+
+      

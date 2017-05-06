@@ -1,6 +1,6 @@
 class Users::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
-  #clear_respond_to
+  clear_respond_to
   respond_to :json
   skip_before_action :verify_authenticity_token
 
@@ -9,11 +9,11 @@ class Users::SessionsController < Devise::SessionsController
   #   super
   # end
 
-  # POST /resource/sign_in
-  def create
-    super
-    #clear_respond_to if resource.save?
-  end
+  # # POST /resource/sign_in
+  # def create
+  #   super
+  #   #clear_respond_to if resource.save?
+  # end
 
   # DELETE /resource/sign_out
   # def destroy

@@ -51,6 +51,7 @@ $(document).on("turbolinks:load", () => {
 
    $("#sign_up_user").on("ajax:success", (e, data, status, xhr) => {
     //$("#new_article").append(xhr.responseText);
+    console.log(xhr.responseText);
     $("#signup-error").html("Signed Up!");
 }
   ).on ("ajax:error", (e, xhr, status, error) => {

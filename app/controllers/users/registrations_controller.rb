@@ -32,7 +32,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
     else
       clean_up_passwords resource
       set_minimum_password_length
-      respond_with resource
+      byebug
+      respond_with json: resource.errors.messages, location: after_sign_up_path_for(resource)
+      #render :json => { data: "Success!" }
+
+
     end
   end
 

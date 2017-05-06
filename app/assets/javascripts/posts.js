@@ -33,8 +33,8 @@ $(document).on("turbolinks:load", () => {
     //console.log(data);
     console.log(status);
     console.log(xhr);
-    show_ajax_message(xhr.responseText);
-    console.log(xhr.responseText);
+    
+    $("#signin-error").html("Logged In!");
 }
   ).on ("ajax:error", (e, xhr, status, error) => {
     //$("#new_article").append("<p>ERROR</p>");
@@ -51,7 +51,7 @@ $(document).on("turbolinks:load", () => {
 
    $("#sign_up_user").on("ajax:success", (e, data, status, xhr) => {
     //$("#new_article").append(xhr.responseText);
-    console.log(xhr.responseText);
+    $("#signup-error").html("Signed Up!");
 }
   ).on ("ajax:error", (e, xhr, status, error) => {
     //$("#new_article").append("<p>ERROR</p>");

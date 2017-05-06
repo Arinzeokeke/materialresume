@@ -1,0 +1,39 @@
+Okeke Arinzechukwu 
+email: trent9002@gmail.com
+github: github.com/arinzeokeke
+phone: 08099062121
+
+About: I'm  a  computer science undergraduate from the Ynu if Ub. Im looking for a good and challenging IT experience to improve my real life programminf skills. 
+
+
+Qual:
+	WAEC
+	UNi UG
+
+
+Skills:
+A programmer with 3 years experience with an active github account. Very comfortable with Version Control and TDD. Specializes in web and mobile dev. Most familiar with Ruby on Rails, nide.js and android dev. Flexible to adopt more tech if required
+
+Languages:
+	Python, Ruby, Java, JavaScript, C
+	Fairly Good: PHP
+	Frameworks/Libraries: RoR, node.js (MERN stack), React.js, jQuery, Android
+	HTML and CSS
+
+Open Source Projects:
+	Ruby gem for password validations on Ruby on Rails apps
+	 {github link}
+	Resume Upload Site with a Material Theme {on-going project}
+	Utility Bot that suggests possible price changes at the Reddit Fantasy PL subreddit
+	Basic Instagram Clone with RoR
+
+Participations:
+	IEEE 2015, 2016, 2017
+	Google CodeJam 2017
+	Google HasgCode 2017
+	UI ForLoop 2017
+	Multiple NACOSS events
+
+Activities
+	Lead Trainer, NACOSS Software Development Club
+

@@ -13,15 +13,15 @@
 
         	<div class="collapse navbar-collapse" id="navigation-example">
         		<ul class="nav navbar-nav navbar-right">
-                <% if user_signed_in? %>
+                <% if current_user %>
                     <li>
-                        <%= link_to  destroy_user_session_path,  method: :delete do %>
+                        <%= link_to  logout_path, method: :post do %>
                         <i class="material-icons">unarchive</i> Log Out
                         <% end %>
                     </li>
 
                     <li>
-                        <%= link_to  profile_path current_user  do %>
+                        <%= link_to  "#"  do %>
                         <i class="material-icons">unarchive</i> Profile
                         <% end %>
                     </li>
@@ -31,12 +31,24 @@
                     
                 <% else %>
                     <li>
-                        <%= link_to  "javascript:void(0)", id: "signup-btn" do %>
+                        <% link_to  "javascript:void(0)", id: "signup-btn" do %>
                         <i class="material-icons">perm_identity</i> Register
                         <% end %>
                     </li>
                     <li>
-                        <%= link_to "javascript:void(0)", id: "signin-btn" do %>
+                        <% link_to "javascript:void(0)", id: "signin-btn" do %>
+                        <i class="material-icons">rowing</i> Log In
+                        <% end %>
+                    </li>
+
+
+                    <li>
+                        <%= link_to  new_user_path do %>
+                        <i class="material-icons">perm_identity</i> Register
+                        <% end %>
+                    </li>
+                    <li>
+                        <%= link_to login_path do %>
                         <i class="material-icons">rowing</i> Log In
                         <% end %>
                     </li>

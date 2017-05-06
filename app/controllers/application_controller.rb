@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   after_filter :flash_to_headers
+  #before_action :require_login
   private
 
     def flash_to_headers

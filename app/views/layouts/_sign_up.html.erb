@@ -2,7 +2,7 @@
       <div class="container-fluid popup-dialog">
 
             <div class="card card-signup">
-            <%= simple_form_for users_path, :html => {:id => "sign_up_user"}, :format => :json, :remote => true  do |f| %>
+            <%=  simple_form_for :user, url: url_for(action: 'create', controller: 'users'), :html => {:id => "sign_up_user"}, :format => :json, :remote => true  do |f| %>
                 <div class="header header-primary text-center">
                   <h4>Sign Up</h4>
                   
@@ -21,7 +21,7 @@
                 </div>
                 <p class="text-divider">Or Be Classical</p>
 
-              <div id='signin-error' class = 'text-center' style = 'color: red;'> </div>
+              <div id='signup-error' class = 'text-center' style = 'color: red;'> </div>
                 <div class="content">
 
                   <div class="input-group">

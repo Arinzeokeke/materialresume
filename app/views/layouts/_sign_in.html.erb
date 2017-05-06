@@ -6,7 +6,7 @@
       <div class="container-fluid popup-dialog">
 
             <div class="card card-signup">
-              <%= form_tag user_sessions_path, method: :post , :html => {:id => "sign_in_user"}, :format => :json, :remote => true  do  %>
+              <%= form_tag user_sessions_path, method: :post , :id => "sign_in_user", :format => :json, :remote => true  do  %>
                 <div class="header header-primary text-center">
                   <h4>Log In</h4>
                   
@@ -30,9 +30,11 @@
 
                   <div class="input-group">
                     <span class="input-group-addon">
-                      <i class="material-icons">email</i>
+                      <i class="material-icons">email</i> 
                     </span>
-                    <%= text_field_tag :email, placeholder: 'email', required: true, autofocus: true %>
+                    <div class="form-group email required ">
+                    <%= email_field_tag :email, '', class: "form-control string email required" , required: true,  label: false, placeholder: 'email'%>
+                    </div>
                     
                   </div>
 
@@ -40,7 +42,9 @@
                     <span class="input-group-addon">
                       <i class="material-icons">lock_outline</i>
                     </span>
-                    <%= password_field_tag :password, required: true, placeholder: 'Password' %>
+                    <div class="form-group password required ">
+                    <%= password_field_tag :password, '',  class: "form-control string password required" , required: true , label: false, placeholder: 'Password'%>
+                    </div>
                   </div>
 
                   <!-- If you want to add a checkbox to this form, uncomment this code 

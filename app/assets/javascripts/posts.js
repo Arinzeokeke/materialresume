@@ -41,11 +41,11 @@ $(document).on("turbolinks:load", () => {
     //console.log(data);
     console.log(status);
     console.log(xhr);
-    var errors = xhr.responseText;
+    var errors = JSON.parse(xhr.responseText).message;
     var mes = "";
     mes += '<p>' + errors + '</p>';
     mes +=  '';
-    $("#signin-error").html(mes);
+    $("#signin-error").html(errors);
     console.log(xhr.responseText);
 });
 
@@ -57,11 +57,11 @@ $(document).on("turbolinks:load", () => {
   ).on ("ajax:error", (e, xhr, status, error) => {
     //$("#new_article").append("<p>ERROR</p>");
     console.log(xhr.responseText);
-    var errors = JSON.parse(xhr.responseText)['errors'];
+    var errors = JSON.parse(xhr.responseText);
     console.log(errors);
     var mes = "<div class = 'row'>";
     for (i in errors){
-    	mes += '<p>' + i + ': ' + errors[i] + '</p>';
+    	mes += '<p>'  + errors[i] + '</p>';
     }
     mes +=  '</div>';
     $("#signup-error").html(mes);

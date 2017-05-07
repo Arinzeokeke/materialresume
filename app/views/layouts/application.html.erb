@@ -22,6 +22,10 @@
 
   <body class="landing-page">
     <%= render 'layouts/popupforms' %>
+
+    <% unless current_user %>
+      <%= render 'layouts/register_warning' %>
+    <% end %>
   
     <%= render 'layouts/nav' %>
     <div class="wrapper">

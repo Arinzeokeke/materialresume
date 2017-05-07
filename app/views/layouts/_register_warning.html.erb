@@ -1,0 +1,38 @@
+<div  class="modal fade" id="reg-modal"  role="dialog" >
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					<i class="material-icons">clear</i>
+				</button>
+				<h4 class="modal-title"></h4>
+			</div>
+			<div class="modal-body">
+				<h3><p> Sign Up with us and get extra features. You can also come back later to edit your resume. It only takes a few seconds. No spam, pinky swear. No bamboozles
+				</p></h3>
+
+				<div class="row">
+					<div class="col-xs-5">
+							                        
+	                        <button class="btn btn-success">Success</button>
+					</div>
+
+					<div class="col-xs-5 col-xs-offset-2"></div>
+					       <button class="btn btn-info">Info</button>
+					</div>
+				</div>
+
+				<div class="text-center">
+					<h4><p> Leave me alone. I just want a quick resume</p> </h4>
+					<%= link_to  new_post_path,  class: "btn btn-danger btn-raised btn-md" do %>
+          			<i class="fa fa-play"></i>  Create Resume
+          				<% end %>
+
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Close<div class="ripple-container"></div></button>
+			</div>
+		</div>
+	</div>
+</div>

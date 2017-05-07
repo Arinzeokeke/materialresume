@@ -93,6 +93,12 @@ $("#signin2").on('click', function(){
 
 });
 
+$("#reg-warn").on('click', function(){
+	console.log('modal yo 2');
+	$("#reg-modal").modal();
+
+});
+
 
 $("#signup2").click( function(){
 	console.log('modal yo');

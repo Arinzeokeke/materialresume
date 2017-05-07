@@ -19,12 +19,16 @@
 	<!-- CSS Files -->
 	<%= stylesheet_link_tag    params[:controller], media: 'all', 'data-turbolinks-track': 'reload' %>
 
+<%= csrf_meta_tags %>
 	<%= stylesheet_link_tag    'cv_form/form', media: 'all', 'data-turbolinks-track': 'reload' %>
 	
 
 	</head>
 
 	<body>
+	    <% unless current_user %>
+      <%= render 'layouts/register_warning' %>
+    <% end %>
 	  <%= render 'layouts/popupforms' %>
 	<%= render 'layouts/nav' %>
 

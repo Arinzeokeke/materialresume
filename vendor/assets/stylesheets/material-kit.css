@@ -3648,7 +3648,7 @@ h2.title {
   background: -webkit-linear-gradient(135deg, rgba(101, 47, 142, 0.88) 0%, rgba(125, 46, 185, 0.45) 100%);
 }
 
-:not(.popup) .landing-header {
+ .landing-header {
   height: 100vh;
 }
 .landing-page .header .container {
@@ -3714,11 +3714,11 @@ h2.title {
 }
 
 @media (max-width: 991px) {
-  ..landing-header {
+  .landing-header {
     height: auto;
     min-height: 100vh;
   }
-  ..landing-header .container {
+  .landing-header .container {
     padding-bottom: 70px;
   }
 }

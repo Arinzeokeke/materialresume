@@ -8,6 +8,7 @@ class CreatePosts < ActiveRecord::Migration[5.0]
 			t.references :qualification, foreign_key: true
 			t.references :experience, foreign_key: true
 			t.references :project, foreign_key: true
+			t.json 
 
 			t.timestamps
 		end

@@ -5,7 +5,7 @@
  =========================================================
  
  * Product Page: https://www.creative-tim.com/product/material-bootstrap-wizard
- * Copyright 2017 Creative Tim (http://www.creative-tim.com)
+ * Copyright 2017 Material Resume (http://www.creative-tim.com)
  * Licensed under MIT (https://github.com/creativetimofficial/material-bootstrap-wizard/blob/master/LICENSE.md)
  
  =========================================================

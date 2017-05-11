@@ -4,13 +4,16 @@ class CreatePosts < ActiveRecord::Migration[5.0]
 			t.string :first_name
 			t.string :last_name 
 			t.string :email
-			t.references :recommendation, foreign_key: true
-			t.references :qualification, foreign_key: true
-			t.references :experience, foreign_key: true
-			t.references :project, foreign_key: true
-			t.json 
+			t.integer :recommendation_id
+			t.integer :qualification_id
+			t.integer :experience_id
+			t.integer :project_id
 
 			t.timestamps
+			add_index("posts", "recommendation_id" )
+			add_index("posts", "qualification_id" )
+			add_index("posts", "experience_id" )
+			add_index("posts", "project_id" )
 		end
 	end
 end

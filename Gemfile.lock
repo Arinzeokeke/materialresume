@@ -119,6 +119,7 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (~> 0.3.0)
+    pg (0.20.0)
     puma (3.6.2)
     rack (2.0.1)
     rack-test (0.6.3)
@@ -215,6 +216,7 @@ DEPENDENCIES
   kaminari
   listen (~> 3.0.5)
   paperclip
+  pg
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)
   sass-rails (~> 5.0)

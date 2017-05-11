@@ -11,15 +11,15 @@
 //= require_self
 
 
-$(document).on("turbolinks:load", () => {
+$(document).on("turbolinks:load", function() {
 
 
-	var show_ajax_message = (msg) => {
+	var show_ajax_message = function(msg) {
 		$("#signin-error").html("<div id='flash-#{type}'>" + msg + "</div>");
 //$("#flash-#{type}").delay(5000).slideUp('slow');
 }
 
-$(document).ajaxComplete((event, request) => {
+$(document).ajaxComplete(function(event, request) {
 	msg = request.getResponseHeader("X-Message");
 	type = request.getResponseHeader("X-Message-Type");
 //show_ajax_message(msg, type); //use whatever popup, notification or whatever plugin you want
@@ -27,12 +27,12 @@ $(document).ajaxComplete((event, request) => {
 
 
 
-$("#sign_in_user").on("ajax:success", (e, data, status, xhr) => {
+$("#sign_in_user").on("ajax:success", function(e, data, status, xhr) {
 
 
 $("#signin-error").html("Logged In!");
 }
-).on ("ajax:error", (e, xhr, status, error) => {
+).on ("ajax:error", function(e, xhr, status, error) {
 //$("#new_article").append("<p>ERROR</p>");
 //console.log(data);
 console.log(status);
@@ -45,12 +45,12 @@ $("#signin-error").html(errors);
 console.log(xhr.responseText);
 });
 
-$("#sign_up_user").on("ajax:success", (e, data, status, xhr) => {
+$("#sign_up_user").on("ajax:success", function(e, data, status, xhr){
 //$("#new_article").append(xhr.responseText);
 console.log(xhr.responseText);
 $("#signup-error").html("Signed Up!");
 }
-).on ("ajax:error", (e, xhr, status, error) => {
+).on ("ajax:error", function(e, xhr, status, error) {
 //$("#new_article").append("<p>ERROR</p>");
 console.log(xhr.responseText);
 var errors = JSON.parse(xhr.responseText);

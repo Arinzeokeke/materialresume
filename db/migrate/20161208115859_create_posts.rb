@@ -10,10 +10,12 @@ class CreatePosts < ActiveRecord::Migration[5.0]
 			t.integer :project_id
 
 			t.timestamps
-			add_index("posts", "recommendation_id" )
-			add_index("posts", "qualification_id" )
-			add_index("posts", "experience_id" )
-			add_index("posts", "project_id" )
 		end
+
+		add_index("posts", "recommendation_id" )
+		add_index("posts", "qualification_id" )
+		add_index("posts", "experience_id" )
+		add_index("posts", "project_id" )
+
 	end
 end

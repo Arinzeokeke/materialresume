@@ -1,7 +1,7 @@
 # README
 
 A CV upload site. Fill a form and get your standard CV (Ongoing project).
-[live](https://www.materialresume.herokuapp.com)
+[live](https://materialresume.herokuapp.com)
 
 TODOS:
 

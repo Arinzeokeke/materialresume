@@ -6,8 +6,10 @@ TODOS:
 
 * Convert CV to PDf 
 
-* Stylings
+* Stylings for profile page
 
-* PErsonal Page
+* Desifn a material resume
+
+* Permalink slugs for CV
 
 * CV likes

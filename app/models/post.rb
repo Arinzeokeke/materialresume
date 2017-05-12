@@ -5,6 +5,7 @@ class Post < ApplicationRecord
 	has_many :experiences, dependent: :destroy
 	has_many :others, dependent: :destroy
 	has_many :skills, dependent: :destroy 
+	belongs_to :post
 	validates :first_name, :last_name, :category, :about, presence: true
 
 	has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"

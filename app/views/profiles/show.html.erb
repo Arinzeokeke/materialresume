@@ -10,7 +10,7 @@
 	                            <%= image_tag 'headshot.jpg', alt:"Circle Image" , class: "img-circle img-responsive img-raised"%>
 	                        </div>
 	                        <div class="name">
-	                            <h3 class="title"><%= @user.username %></h3>
+	                            <h3 class="title"><%= @user.post.full_name %></h3>
 								<h6><%= @user.post.category if @user.post %></h6>
 	                        </div>
 	                    </div>
@@ -27,21 +27,16 @@
 										<li class="active">
 											<a href="#studio" role="tab" data-toggle="tab">
 												<i class="material-icons">camera</i>
-												Studio
+												View CV
 											</a>
 										</li>
 										<li>
 				                            <a href="#work" role="tab" data-toggle="tab">
 												<i class="material-icons">palette</i>
-												Work
+												Download PDF
 				                            </a>
 				                        </li>
-				                        <li>
-				                            <a href="#shows" role="tab" data-toggle="tab">
-												<i class="material-icons">favorite</i>
-				                                Favorite
-				                            </a>
-				                        </li>
+				                       
 				                    </ul>
 								</div>
 							</div>

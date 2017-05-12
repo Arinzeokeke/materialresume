@@ -1,10 +1,15 @@
 class PostsController < ApplicationController
   #layout 'cv', only: [:show]
   layout 'form', only: [:new, :edit]
+  before_action :require_login, only: [:edit, :update]
 	before_action :get_post, only: [:edit, :show, :delete, :update, :destroy]
   
   def index
   	@posts = Post.all
+    if current_user and current_user.post
+      @post = current_user.post
+      #render :show, layout: 'cv'
+    end
     
   end
 
@@ -37,6 +42,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @post.user_id = current_user.id if current_user
   	if @post.save
       flash[:notice] = "Post created successfully"
       redirect_to post_path @post

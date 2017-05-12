@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   #after_filter :flash_to_headers
-  #before_action :require_login
+  
   private
 
     # def flash_to_headers
@@ -23,4 +23,12 @@ class ApplicationController < ActionController::Base
     #     return type unless flash[type].blank?
     #   end
     # end
+
+    # app/controllers/application_controller.rb
+    
+    def not_authenticated
+        redirect_to login_path, alert: "Please login first"
+    end
+
+    
 end

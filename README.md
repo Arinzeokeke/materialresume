@@ -1,6 +1,7 @@
 # README
 
-A CV upload site. Fill a form and get your standard CV.
+A CV upload site. Fill a form and get your standard CV (Ongoing project).
+(live)[https://www.materialresume.herokuapp.com]
 
 TODOS:
 
@@ -12,4 +13,4 @@ TODOS:
 
 * Permalink slugs for CV
 
-* CV likes
+* CV likes & Views count
